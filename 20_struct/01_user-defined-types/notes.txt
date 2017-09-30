@@ -10,4 +10,5 @@
  see the time package for an example of this
      godoc.org/time
      type Duration int64
+
  Duration has methods attached to it

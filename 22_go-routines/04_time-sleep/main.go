@@ -10,8 +10,10 @@ var wg sync.WaitGroup
 
 func main() {
 	wg.Add(2)
+
 	go foo()
 	go bar()
+
 	wg.Wait()
 }
 
@@ -20,6 +22,7 @@ func foo() {
 		fmt.Println("Foo:", i)
 		time.Sleep(3 * time.Millisecond)
 	}
+
 	wg.Done()
 }
 
@@ -28,5 +31,6 @@ func bar() {
 		fmt.Println("Bar:", i)
 		time.Sleep(20 * time.Millisecond)
 	}
+
 	wg.Done()
 }

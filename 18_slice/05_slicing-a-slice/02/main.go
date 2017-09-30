@@ -16,10 +16,10 @@ func main() {
 
 	fmt.Print("[1:2] ")
 	fmt.Println(greeting[1:2])
-	fmt.Print("[:2] ")
+	fmt.Print("[:2] ")     // [0:2]
 	fmt.Println(greeting[:2])
-	fmt.Print("[5:] ")
+	fmt.Print("[5:] ")     // [5:len(arr)]
 	fmt.Println(greeting[5:])
-	fmt.Print("[:] ")
+	fmt.Print("[:] ")      // [0:len(arr)]
 	fmt.Println(greeting[:])
 }

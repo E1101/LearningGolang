@@ -12,6 +12,7 @@ func main() {
 	}
 
 	fmt.Println(myGreeting)
+
 	delete(myGreeting, 7)
 	fmt.Println(myGreeting)
 }

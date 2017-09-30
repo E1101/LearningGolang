@@ -16,6 +16,7 @@ func main() {
 func changeMe(z *int) {
 	fmt.Println(z)  // 0x82023c080
 	fmt.Println(*z) // 44
+
 	*z = 24
 	fmt.Println(z)  // 0x82023c080
 	fmt.Println(*z) // 24

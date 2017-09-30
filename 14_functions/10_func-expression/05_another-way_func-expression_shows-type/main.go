@@ -10,6 +10,7 @@ func makeGreeter() func() string {
 
 func main() {
 	greet := makeGreeter()
+
 	fmt.Println(greet())
 	fmt.Printf("%T\n", greet)
 }

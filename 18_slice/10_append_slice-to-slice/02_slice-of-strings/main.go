@@ -5,9 +5,7 @@ import "fmt"
 func main() {
 
 	mySlice := []string{"Monday", "Tuesday"}
-	myOtherSlice := []string{"Wednesday", "Thursday", "Friday"}
-
-	mySlice = append(mySlice, myOtherSlice...)
+	mySlice = append(mySlice, []string{"Wednesday", "Thursday", "Friday"}...)
 
 	fmt.Println(mySlice)
 }

@@ -16,6 +16,7 @@ func main() {
 func changeMe(z *string) {
 	fmt.Println(z)  // 0x82023c080
 	fmt.Println(*z) // Todd
+
 	*z = "Rocky"
 	fmt.Println(z)  // 0x82023c080
 	fmt.Println(*z) // Rocky

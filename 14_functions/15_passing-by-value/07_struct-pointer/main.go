@@ -20,6 +20,7 @@ func main() {
 func changeMe(z *customer) {
 	fmt.Println(z)       // &{Todd 44}
 	fmt.Println(&z.name) // 0x8201e4120
+
 	z.name = "Rocky"
 	fmt.Println(z)       // &{Rocky 44}
 	fmt.Println(&z.name) // 0x8201e4120

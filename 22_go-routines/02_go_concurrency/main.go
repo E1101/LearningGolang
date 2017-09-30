@@ -1,10 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	go foo()
 	go bar()
+
+	var input string
+	fmt.Scanln(&input)
 }
 
 func foo() {

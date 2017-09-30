@@ -6,6 +6,14 @@ import (
 	"testing/quick"
 )
 
+/*
+$ go test
+
+look for any tests in any of the files in the current folder
+and run them
+
+*/
+
 func TestAdder(t *testing.T) {
 	result := Adder(4, 7)
 	if result != 11 {
