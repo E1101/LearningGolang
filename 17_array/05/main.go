@@ -4,11 +4,10 @@ import "fmt"
 
 func main() {
 	x := [5]float64{
-		98,
-		93,
+		0: 98,
+		2: 93,
 		77,
 		82,
-		83,
 	}
 
 	fmt.Println(len(x))

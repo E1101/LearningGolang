@@ -1,11 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
-	fmt.Println(greet("Jane ", "Doe "))
+func Swap(x, y string) (string, string) {
+	return y, x
 }
 
-func greet(fname, lname string) (string, string) {
-	return fmt.Sprint(fname, lname), fmt.Sprint(lname, fname)
+func main() {
+	x, y := "Shiju", "Varghese"
+	fmt.Println("Before Swap:", x, y)
+
+	x, y = Swap(x, y)
+	fmt.Println("After Swap:", x, y)
 }
