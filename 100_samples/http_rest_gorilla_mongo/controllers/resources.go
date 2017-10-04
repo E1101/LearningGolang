@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"github.com/shijuvar/go-recipes/ch07/bookmarkapi/model"
+	"GolangTraining/100_samples/http_rest_gorilla_mongo/model"
 )
 
 //Models for JSON resources
@@ -10,15 +10,18 @@ type (
 	UserResource struct {
 		Data UserModel `json:"data"`
 	}
+
 	// AuthUserResource Response for authorized user Post - /user/login
 	AuthUserResource struct {
 		Data AuthUserModel `json:"data"`
 	}
+
 	// BookmarkResource For Post/Put - /bookmarks
 	// For Get - /bookmarks/id
 	BookmarkResource struct {
 		Data model.Bookmark `json:"data"`
 	}
+
 	// BookmarksResource for Get - /bookmarks
 	BookmarksResource struct {
 		Data []model.Bookmark `json:"data"`
@@ -31,6 +34,7 @@ type (
 		Email     string `json:"email"`
 		Password  string `json:"password"`
 	}
+
 	// AuthUserModel for authorized user with access token
 	AuthUserModel struct {
 		User  model.User `json:"user"`

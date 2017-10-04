@@ -8,8 +8,8 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
-	"github.com/shijuvar/go-recipes/ch07/bookmarkapi/common"
-	"github.com/shijuvar/go-recipes/ch07/bookmarkapi/store"
+	"GolangTraining/100_samples/http_rest_gorilla_mongo/common"
+	"GolangTraining/100_samples/http_rest_gorilla_mongo/store"
 )
 
 // CreateBookmark insert a new Bookmark.
@@ -27,6 +27,7 @@ func CreateBookmark(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	bookmark := &dataResource.Data
 	// Creates a new DatStore value to working with MongoDB store.
 	dataStore := common.NewDataStore()
@@ -41,6 +42,7 @@ func CreateBookmark(w http.ResponseWriter, r *http.Request) {
 	if user != nil {
 		bookmark.CreatedBy = user.(string)
 	}
+
 	// Insert a bookmark document
 	err = bookmarkStore.Create(bookmark)
 	if err != nil {
@@ -52,6 +54,7 @@ func CreateBookmark(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	j, err := json.Marshal(BookmarkResource{Data: *bookmark})
 	// If error is occured,
 	// Send JSON response using helper function common.DisplayAppError
@@ -64,6 +67,7 @@ func CreateBookmark(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 	// Write the JSON data to the ResponseWriter
@@ -89,6 +93,7 @@ func GetBookmarks(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(j)
@@ -122,6 +127,7 @@ func GetBookmarkByID(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
+
 	j, err := json.Marshal(bookmark)
 	if err != nil {
 		common.DisplayAppError(
@@ -132,6 +138,7 @@ func GetBookmarkByID(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(j)
@@ -158,6 +165,7 @@ func GetBookmarksByUser(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(j)
@@ -181,6 +189,7 @@ func UpdateBookmark(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	bookmark := dataResource.Data
 	bookmark.ID = id
 	dataStore := common.NewDataStore()
@@ -197,8 +206,8 @@ func UpdateBookmark(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
-	w.WriteHeader(http.StatusNoContent)
 
+	w.WriteHeader(http.StatusNoContent)
 }
 
 // DeleteBookmark deletes an existing Bookmark document
@@ -221,5 +230,6 @@ func DeleteBookmark(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	w.WriteHeader(http.StatusNoContent)
 }

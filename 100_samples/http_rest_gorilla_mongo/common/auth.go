@@ -124,6 +124,7 @@ func AuthorizeRequest(next http.Handler) http.Handler {
 			}
 
 		}
+
 		if token.Valid {
 			// Create a Context by setting the user name
 			ctx := context.WithValue(r.Context(), "user", token.Claims.(*AppClaims).UserName)
@@ -184,6 +185,7 @@ func AuthorizeRequestWithNegroni(w http.ResponseWriter, r *http.Request, next ht
 		}
 
 	}
+
 	if token.Valid {
 		ctx := context.WithValue(r.Context(), "user", token.Claims.(*AppClaims).UserName)
 		next(w, r.WithContext(ctx))

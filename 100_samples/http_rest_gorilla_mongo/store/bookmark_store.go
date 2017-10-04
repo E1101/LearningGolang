@@ -6,7 +6,7 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
-	"github.com/shijuvar/go-recipes/ch07/bookmarkapi/model"
+	"GolangTraining/100_samples/http_rest_gorilla_mongo/model"
 )
 
 // BookmarkStore provides CRUD operations against the collection "bookmarks".

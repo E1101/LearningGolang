@@ -15,6 +15,7 @@ type (
 		Email        string        `json:"email"`
 		HashPassword []byte        `json:"hashpassword,omitempty"`
 	}
+
 	// Bookmark type represents the metadata of a bookmark.
 	Bookmark struct {
 		ID          bson.ObjectId `bson:"_id,omitempty"`

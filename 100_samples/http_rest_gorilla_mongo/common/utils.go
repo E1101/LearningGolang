@@ -53,6 +53,7 @@ func loadAppConfig() {
 	if err != nil {
 		log.Fatalf("[loadConfig]: %s\n", err)
 	}
+
 	decoder := json.NewDecoder(file)
 	AppConfig = configuration{}
 	err = decoder.Decode(&AppConfig)

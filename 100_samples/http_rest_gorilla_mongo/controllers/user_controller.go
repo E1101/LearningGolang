@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/shijuvar/go-recipes/ch07/bookmarkapi/common"
-	"github.com/shijuvar/go-recipes/ch07/bookmarkapi/model"
-	"github.com/shijuvar/go-recipes/ch07/bookmarkapi/store"
+	"GolangTraining/100_samples/http_rest_gorilla_mongo/common"
+	"GolangTraining/100_samples/http_rest_gorilla_mongo/model"
+	"GolangTraining/100_samples/http_rest_gorilla_mongo/store"
 )
 
 // Register add a new User document
@@ -24,6 +24,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	userModel := dataResource.Data
 	dataStore := common.NewDataStore()
 	defer dataStore.Close()
@@ -36,6 +37,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	}
 	// Insert User document
 	userStore.Create(user, userModel.Password)
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
 }
@@ -56,6 +58,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	loginUser := dataResource.Data
 	dataStore := common.NewDataStore()
 	defer dataStore.Close()
@@ -72,6 +75,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	// Generate JWT token
 	token, err = common.GenerateJWT(user.Email, "member")
 	if err != nil {
@@ -83,6 +87,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	w.Header().Set("Content-Type", "application/json")
 	// Clean-up the hashpassword to eliminate it from response JSON
 	user.HashPassword = nil
@@ -100,6 +105,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		)
 		return
 	}
+
 	w.WriteHeader(http.StatusOK)
 	w.Write(j)
 }

@@ -19,12 +19,15 @@ func getSession() *mgo.Session {
 			Password: AppConfig.DBPwd,
 			Timeout:  60 * time.Second,
 		})
+
 		if err != nil {
 			log.Fatalf("[GetSession]: %s\n", err)
 		}
 	}
+
 	return session
 }
+
 func createDBSession() {
 	var err error
 	session, err = mgo.DialWithInfo(&mgo.DialInfo{
@@ -33,6 +36,7 @@ func createDBSession() {
 		Password: AppConfig.DBPwd,
 		Timeout:  60 * time.Second,
 	})
+
 	if err != nil {
 		log.Fatalf("[createDbSession]: %s\n", err)
 	}
@@ -41,14 +45,17 @@ func createDBSession() {
 // Add indexes into MongoDB
 func addIndexes() {
 	var err error
+
 	userIndex := mgo.Index{
 		Key:        []string{"email"},
 		Unique:     true,
 		Background: true,
 		Sparse:     true,
 	}
+
 	// Add indexes into MongoDB
 	session := getSession().Copy()
+
 	defer session.Close()
 	userCol := session.DB(AppConfig.Database).C("users")
 
