@@ -4,14 +4,17 @@ import (
 	"fmt"
 	"testing"
 	"testing/quick"
+	"time"
 )
 
 /*
 $ go test
 
 look for any tests in any of the files in the current folder
-and run them
+and run them.
 
+The go test command provides a coverage (-cover) flag that helps
+you to get coverage of the test cases written against your code.
 */
 
 func TestAdder(t *testing.T) {
@@ -44,6 +47,25 @@ func TestAdderBlackbox(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+}
+
+// The type testing.T provides a method Skip that can be used to skip unit tests.
+// To skip those unit tests, you can give a signal by providing a short (-short)
+// flag to the go test command.
+
+// TestLongRun is a time-consuming test
+func TestLongRun(t *testing.T) {
+	// Checks whether the short flag is provided
+	if testing.Short() {
+		t.Skip("Skipping test in short mode")
+	}
+
+	// Long running implementation goes here
+	time.Sleep(5 * time.Second)
+}
+
+func TestSkipped(t *testing.T)  {
+	t.Skip("Skipping test in short mode")
 }
 
 func a(x, y int) bool {
