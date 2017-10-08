@@ -15,6 +15,8 @@ import (
 func ReadFile(filename string) ([]byte, error) {
 	f, err := os.Open(filename)
 	if err != nil {
+		// The best thing to pass to a panic is an error.
+		// Use the error type to make it easy for the recovery function
 		panic (err) // calls panic
 	}
 	defer f.Close()

@@ -10,6 +10,7 @@ type NorgateMathError struct {
 	err       error
 }
 
+// Implement Error Interface
 func (n *NorgateMathError) Error() string {
 	return fmt.Sprintf("a norgate math error occured: %v %v %v", n.lat, n.long, n.err)
 }
