@@ -15,6 +15,7 @@ type Page struct {
 func main() {
 	var err error
 	var tpl *template.Template
+
 	tpl, err = tpl.ParseFiles("tpl.gohtml", "tpl2.gohtml")
 	if err != nil {
 		log.Fatalln(err)
@@ -27,6 +28,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+
 	fmt.Println("\n***************")
 
 	err = tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", Page{
@@ -36,6 +38,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+
 	fmt.Println("\n***************")
 
 	err = tpl.ExecuteTemplate(os.Stdout, "tpl2.gohtml", Page{
