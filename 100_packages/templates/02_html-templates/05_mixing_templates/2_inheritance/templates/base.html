@@ -1,0 +1,40 @@
+<!--
+Starts a new base
+template with define
+-->
+{{define "base"}}<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--
+    Invokes the title template,
+    which is defined elsewhere
+    -->
+    <title>{{template "title" .}}</title>
+
+    <!--
+    Defines and immediately invokes
+    the styles template
+    -->
+    {{ block "styles" . }}<style>
+    h1 {
+        color: #400080
+    }
+    </style>{{ end }}
+
+</head>
+<body>
+    <h1>{{template "title" .}}</h1>
+
+    {{template "content" .}}
+
+    <!--
+    Defines and invokes the scripts
+    template, which is currently
+    empty. An extending template can
+    redefine the contents of scripts.
+    -->
+    {{block "scripts" .}}{{end}}
+
+</body>
+</html>{{end}}<!--End of the base template-->

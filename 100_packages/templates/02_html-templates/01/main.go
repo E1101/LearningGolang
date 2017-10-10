@@ -10,6 +10,7 @@ import (
 type Page struct {
 	Title string
 	Body  string
+//	Body  template.HTML
 }
 
 func main() {

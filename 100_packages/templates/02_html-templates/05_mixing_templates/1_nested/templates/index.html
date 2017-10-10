@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html>
+<!--
+(for example, if {{template "head.html" .Foo}} were used, the properties on .Foo
+would be the ones available inside head.html )
+-->
+{{template "head.html" .}}
+<body>
+    <h1>{{.Title}}</h1>
+    <p>{{.Content}}</p>
+</body>
+</html>

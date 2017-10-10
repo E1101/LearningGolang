@@ -1,4 +1,4 @@
-package main
+package __parse_glob
 
 import (
 	"fmt"
