@@ -1,4 +1,4 @@
-package main
+package casting_interfce
 
 import (
 	"encoding/json"
