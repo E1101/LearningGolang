@@ -7,8 +7,8 @@ import (
 
 type person struct {
 	First string
-	Last  string `json:"-"`
-	Age   int    `json:"wisdom score"`
+	Last  string `json:"-"`             // ignorant from export
+	Age   int    `json:"wisdom score"`  // change field name while marshal to json
 }
 
 func main() {

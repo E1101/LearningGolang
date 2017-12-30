@@ -51,32 +51,8 @@ func main() {
 	fmt.Printf("Struct: %#v", proc2)
 }
 
-// ..
 
-func Unmarshal(data []byte, v interface{}) error {
-	val := reflect.Indirect(reflect.ValueOf(v))
-	t := val.Type()
-	b := bytes.NewBuffer(data)
-	// From data, you use a scanner to
-	// read one line of INI data at a time.
-	scanner := bufio.NewScanner(b)
-	for scanner.Scan() {
-		// Splits a line at the
-		// equals sign
-		line := scanner.Text()
-		pair := strings.SplitN(line, "=", 2)
-		if len(pair) < 2 {
-			// Skip any malformed lines.
-			continue
-		}
-
-		// Passes the task of setting
-		// the value to setField()
-		setField(pair[0], pair[1], t, val)
-	}
-
-	return nil
-}
+// Methods:
 
 func Marshal(v interface{}) ([]byte, error) {
 	var b bytes.Buffer
@@ -106,6 +82,31 @@ func Marshal(v interface{}) ([]byte, error) {
 
 	// Returns the contents of the buffer
 	return b.Bytes(), nil
+}
+
+func Unmarshal(data []byte, v interface{}) error {
+	val := reflect.Indirect(reflect.ValueOf(v))
+	t := val.Type()
+	b := bytes.NewBuffer(data)
+	// From data, you use a scanner to
+	// read one line of INI data at a time.
+	scanner := bufio.NewScanner(b)
+	for scanner.Scan() {
+		// Splits a line at the
+		// equals sign
+		line := scanner.Text()
+		pair := strings.SplitN(line, "=", 2)
+		if len(pair) < 2 {
+			// Skip any malformed lines.
+			continue
+		}
+
+		// Passes the task of setting
+		// the value to setField()
+		setField(pair[0], pair[1], t, val)
+	}
+
+	return nil
 }
 
 
@@ -184,5 +185,3 @@ func fieldName(field reflect.StructField) string {
 	// back to the field name
 	return field.Name
 }
-
-

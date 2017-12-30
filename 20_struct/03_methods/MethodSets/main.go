@@ -9,11 +9,13 @@ import (
 type notifier interface {
 	notify()
 }
+
 // user defines a user in the program.
 type user struct {
 	name string
 	email string
 }
+
 // notify implements a method with a pointer receiver.
 func (u *user) notify() {
 	fmt.Printf("Sending user email to %s<%s>\n",

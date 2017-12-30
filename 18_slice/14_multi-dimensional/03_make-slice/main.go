@@ -10,5 +10,6 @@ func main() {
 
 	fmt.Println(student)
 	fmt.Println(students)
-	fmt.Println(student == nil)
+	fmt.Println(student == nil)   // false
+	fmt.Println(student[0] == "") // true
 }

@@ -13,6 +13,7 @@ type person struct {
 }
 
 func main() {
+	// "notExported" value not initialized into person
 	p1 := person{"James", "Bond", 20, 007}
 	json.NewEncoder(os.Stdout).Encode(p1)
 }

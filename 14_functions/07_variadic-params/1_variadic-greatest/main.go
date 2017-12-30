@@ -3,12 +3,15 @@ package main
 import "fmt"
 
 func max(numbers ...int) int {
+	// largest initialized into zero
 	var largest int
+
 	for _, v := range numbers {
 		if v > largest {
 			largest = v
 		}
 	}
+
 	return largest
 }
 
