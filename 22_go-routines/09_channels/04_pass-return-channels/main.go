@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+
 func main() {
 	c := incrementor()
 	cSum := puller(c)
@@ -10,6 +11,9 @@ func main() {
 		fmt.Println(n)
 	}
 }
+
+
+// ..
 
 func incrementor() chan int {
 	out := make(chan int)

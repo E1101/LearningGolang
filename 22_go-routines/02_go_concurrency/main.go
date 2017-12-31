@@ -12,6 +12,8 @@ func main() {
 	fmt.Scanln(&input)
 }
 
+// ..
+
 func foo() {
 	for i := 0; i < 45; i++ {
 		fmt.Println("Foo:", i)

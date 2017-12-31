@@ -3,9 +3,9 @@
 package main
 
 import (
-"fmt"
-"sync"
-"time"
+	"fmt"
+	"sync"
+	"time"
 )
 
 // wg is used to wait for the program to finish.

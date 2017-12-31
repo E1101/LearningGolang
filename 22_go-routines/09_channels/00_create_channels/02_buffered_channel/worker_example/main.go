@@ -7,23 +7,9 @@ import (
 	"time"
 )
 
-type Task struct {
-	Id int
-	JobId int
-	Status string
-	CreatedOn time.Time
-}
-
-func (t *Task) Run() {
-	// Delaying the execution for the sake of example
-	sleep := rand.Int63n(1000)
-	time.Sleep(time.Duration(sleep) * time.Millisecond)
-
-	t.Status = "Completed"
-}
-
 // wg is used to wait for the program to finish.
 var wg sync.WaitGroup
+
 const noOfWorkers = 3
 
 // main is the entry point for all Go programs.
@@ -52,6 +38,25 @@ func main() {
 	// Wait for all the work to get done.
 	wg.Wait()
 }
+
+// Task:
+
+type Task struct {
+	Id int
+	JobId int
+	Status string
+	CreatedOn time.Time
+}
+
+func (t *Task) Run() {
+	// Delaying the execution for the sake of example
+	sleep := rand.Int63n(1000)
+	time.Sleep(time.Duration(sleep) * time.Millisecond)
+
+	t.Status = "Completed"
+}
+
+// self:
 
 // worker is launched as a goroutine to process Tasks from
 // the buffered channel.

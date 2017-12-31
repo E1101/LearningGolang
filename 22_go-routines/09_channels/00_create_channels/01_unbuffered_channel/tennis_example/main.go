@@ -1,12 +1,12 @@
 // This sample program demonstrates how to use an unbuffered
 // channel to simulate a game of tennis between two goroutines.
-package tennis_example
+package main
 
 import (
-"fmt"
-"math/rand"
-"sync"
-"time"
+	"fmt"
+  	"math/rand"
+	"sync"
+	"time"
 )
 
 // wg is used to wait for the program to finish.

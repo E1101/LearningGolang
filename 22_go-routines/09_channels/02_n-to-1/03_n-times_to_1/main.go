@@ -20,10 +20,15 @@ func main() {
 	}
 
 	go func() {
-		for i := 0; i < n; i++ {
+		var i int = 0
+
+		for {
 			<-done
+			if i++; i >= 10 {
+				close(c)
+			}
+
 		}
-		close(c)
 	}()
 
 	for n := range c {

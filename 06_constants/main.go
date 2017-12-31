@@ -10,6 +10,11 @@ const (
 	language = "Go"
 )
 
+const (
+	numberGoroutines = 4 // Number of goroutines to use.
+	taskLoad             // Amount of work to process. 4
+)
+
 func main() {
 
 	const q = 42
@@ -21,6 +26,12 @@ func main() {
 
 	fmt.Println(pi)
 	fmt.Println(language)
+
+	// ..
+
+	fmt.Println(numberGoroutines)
+	fmt.Println(taskLoad)
+
 }
 
 // a CONSTANT is a simple unchanging value

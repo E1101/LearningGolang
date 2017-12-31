@@ -7,12 +7,36 @@ import (
 	"sync"
 )
 
+// wg is used to wait for the program to finish.
+var wg sync.WaitGroup
+
+func main() {
+	wg.Add(3)
+
+	// Create Channels
+	fibs := make(chan fibvalue)
+	sqrs := make(chan squarevalue)
+
+	// Launching 3 goroutines
+	go generateFibonacci(fibs)
+	go generateSquare(sqrs)
+	go printValues(fibs, sqrs)
+
+	// Wait for completing all goroutines
+	wg.Wait()
+}
+
+
+// ..
+
 type (
 	fibvalue struct {
-		input, value int }
+		input, value int
+	}
 
 	squarevalue struct {
-		input, value int }
+		input, value int
+	}
 )
 
 func generateSquare(sqrs chan<- squarevalue) {
@@ -54,23 +78,4 @@ func printValues(fibs <-chan fibvalue, sqrs <-chan squarevalue) {
 			fmt.Printf("Square value of %d is %d\n", sqr.input, sqr.value)
 		}
 	}
-}
-
-// wg is used to wait for the program to finish.
-var wg sync.WaitGroup
-
-func main() {
-	wg.Add(3)
-
-	// Create Channels
-	fibs := make(chan fibvalue)
-	sqrs := make(chan squarevalue)
-
-	// Launching 3 goroutines
-	go generateFibonacci(fibs)
-	go generateSquare(sqrs)
-	go printValues(fibs, sqrs)
-
-	// Wait for completing all goroutines
-	wg.Wait()
 }
