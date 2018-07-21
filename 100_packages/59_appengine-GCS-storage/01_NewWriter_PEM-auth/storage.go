@@ -20,7 +20,7 @@ func init() {
 
 func handlePut(res http.ResponseWriter, req *http.Request) {
 	ctx := appengine.NewContext(req)
-	bucket := "learning-1130-bucket-01"
+	bucket := "learning-1130-bucket-01 - curly braket scope"
 
 	hc := &http.Client{
 		Transport: &oauth2.Transport{

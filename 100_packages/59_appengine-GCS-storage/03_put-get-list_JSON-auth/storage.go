@@ -14,7 +14,7 @@ import (
 	"io/ioutil"
 )
 
-const gcsBucket = "learning-1130-bucket-01"
+const gcsBucket = "learning-1130-bucket-01 - curly braket scope"
 const aeId = "learning-1130"
 
 func init() {

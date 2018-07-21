@@ -39,6 +39,6 @@ step 1 - at command line enter:
 go install
 
 step 2 - at command line enter:
-01 initial.txt second.txt
+01 - curly braket scope initial.txt second.txt
 
 */

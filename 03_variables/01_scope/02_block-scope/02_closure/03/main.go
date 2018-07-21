@@ -6,7 +6,7 @@ func main() {
 	x := 0
 
 	increment := func() int {
-		x++
+		x++ // x available inside this
 		return x
 	}
 

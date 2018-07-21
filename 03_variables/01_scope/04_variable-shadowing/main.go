@@ -9,6 +9,8 @@ func max(x int) int {
 func main() {
 	max := max(7)
 	fmt.Println(max) // max is now the result, not the function
+
+	max(4) // cannot call non-function max (type int)
 }
 
 // don't do this; bad coding practice to shadow variables

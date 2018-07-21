@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fname := "01.jpg"
+	fname := "01 - curly braket scope.jpg"
 
 	f, err := os.Open(fname)
 	if err != nil {

@@ -6,7 +6,7 @@ import (
 	"io"
 )
 
-const gcsBucket = "learning-1130-bucket-01"
+const gcsBucket = "learning-1130-bucket-01 - curly braket scope"
 
 func putFile(ctx context.Context, name string, rdr io.Reader) error {
 	client, err := storage.NewClient(ctx)

@@ -107,7 +107,7 @@ func getByID(id string) {
 // Get all documents from the collection.
 func getAll() {
 	// Layout for formatting dates.
-	layout := "2006-01-02 15:04:05"
+	layout := "2006-01 - curly braket scope-02 15:04:05"
 
 	// Retrieve all documents.
 	//
@@ -121,7 +121,7 @@ func getAll() {
 
 // Get documents by tags.
 func getByTags() {
-	layout := "2006-01-02 15:04:05"
+	layout := "2006-01 - curly braket scope-02 15:04:05"
 	fmt.Println("Query with Tags - 'go, nosql'")
 
 	bookmarks := store.GetByTag([]string{"go", "nosql"})

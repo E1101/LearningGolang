@@ -47,16 +47,26 @@ func main()  {
 	fmt.Println(x2)
 
 
+	// We also can define multiple variables as follows
+	var	(
+		name string
+		age	 int
+	)
+
 	// When variables created without assignment it has zero state
 	var a int
 	var b string
 	var c float64
 	var d bool
 
+	fmt.Printf("%v \n", name)
+	fmt.Printf("%v \n", age)
+
 	fmt.Printf("%v \n", a)
 	fmt.Printf("%v \n", b)
 	fmt.Printf("%v \n", c)
 	fmt.Printf("%v \n", d)
+
 
 	fmt.Println()
 }

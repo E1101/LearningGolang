@@ -1,4 +1,4 @@
-package _0_for_loop
+package main
 
 import "fmt"
 
@@ -7,7 +7,6 @@ func main() {
 	for i := 0; i <= 100; i++ {
 		fmt.Println(i)
 	}
-
 
 	// For Condition While-ish
 	i := 1
@@ -31,7 +30,6 @@ func main() {
 
 		j++
 	}
-
 
 	// Nested
 	for i := 0; i < 5; i++ {

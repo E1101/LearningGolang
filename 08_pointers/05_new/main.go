@@ -7,6 +7,8 @@ func one(xPtr *int) {
 }
 
 func main() {
+	// Another way to get a pointer is to use
+	// the built-in new function
 	xPtr := new(int)
 
 	one(xPtr)

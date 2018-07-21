@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-const gcsBucket = "learning-1130-bucket-01"
+const gcsBucket = "learning-1130-bucket-01 - curly braket scope"
 
 func init() {
 	http.HandleFunc("/put", handlePut)

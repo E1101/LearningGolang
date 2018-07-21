@@ -21,5 +21,6 @@ func factorial(n int) chan int {
 		out <- total
 		close(out)
 	}()
+
 	return out
 }

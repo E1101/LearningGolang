@@ -1,4 +1,4 @@
-package shorthand
+package main
 
 import "fmt"
 
