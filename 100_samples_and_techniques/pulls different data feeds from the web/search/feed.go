@@ -21,10 +21,10 @@ func RetrieveFeeds() ([]*Feed, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	// Schedule the file to be closed once
 	// the function returns.
 	defer file.Close()
+
 
 	// Decode the file into a slice of pointers
 	// to Feed values.

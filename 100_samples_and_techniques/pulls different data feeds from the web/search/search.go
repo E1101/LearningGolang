@@ -6,7 +6,7 @@ import (
 )
 
 // A map of registered matchers for searching.
-var matchers = make(map[string]Matcher)
+var matchers = make( map[string] Matcher )
 
 // Run performs the search logic.
 func Run(searchTerm string) {
@@ -24,7 +24,7 @@ func Run(searchTerm string) {
 
 	// Set the number of goroutines we need to wait for while
 	// they process the individual feeds.
-	waitGroup.Add(len(feeds))
+	waitGroup.Add( len(feeds) )
 
 	// Launch a goroutine for each feed to find the results.
 	for _, feed := range feeds {

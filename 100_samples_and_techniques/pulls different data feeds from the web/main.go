@@ -8,7 +8,11 @@ import (
 	"github.com/goinaction/code/chapter2/sample/search"
 )
 
-// init is called prior to main.
+// Init is called prior to main.
+//
+// All init functions in any code file that are
+// part of the program will get called before
+// the main function.
 func init() {
 	// Change the device for logging to stdout.
 	log.SetOutput(os.Stdout)
