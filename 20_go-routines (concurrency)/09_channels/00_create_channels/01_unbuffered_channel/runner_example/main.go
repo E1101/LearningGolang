@@ -21,9 +21,9 @@ func main() {
 
 	// First runner to his mark.
 	go Runner(baton)
-
 	// Start the race.
 	baton <- 1
+
 	// Wait for the race to finish.
 	wg.Wait()
 }

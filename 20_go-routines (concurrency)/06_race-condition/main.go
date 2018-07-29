@@ -7,8 +7,9 @@ import (
 	"time"
 )
 
-var wg sync.WaitGroup
 var counter int
+var wg      sync.WaitGroup
+
 
 func main() {
 	wg.Add(2)

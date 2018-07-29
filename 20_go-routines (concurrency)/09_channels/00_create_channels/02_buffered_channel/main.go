@@ -22,7 +22,7 @@ var wg sync.WaitGroup
 // Go runtime prior to any other code being executed.
 func init() {
 	// Seed the random number generator.
-	rand.Seed(time.Now().Unix())
+	rand.Seed( time.Now().Unix() )
 }
 
 // main is the entry point for all Go programs.

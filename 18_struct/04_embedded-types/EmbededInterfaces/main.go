@@ -1,8 +1,9 @@
-package EmbededInterfaces
+package main
 
 import (
 	"fmt"
 )
+
 
 // notifier is an interface that defined notification
 // type behavior.

@@ -12,6 +12,7 @@ func main() {
 	fmt.Scanln(&input)
 }
 
+
 // ..
 
 func foo() {

@@ -26,7 +26,7 @@ func main() {
 
 
 	// When you declare and initialize arrays with the array literal you can provide the initialization expression
-	// in a multiline statement
+	// in a multi-line statement
 	z := [5]int {
 		5,
 		10,
@@ -67,6 +67,4 @@ func main() {
 
 	fmt.Printf("%v ", array)
 	fmt.Printf("%v ", array2)
-
-
 }

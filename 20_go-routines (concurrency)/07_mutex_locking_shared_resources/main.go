@@ -8,8 +8,9 @@ import (
 )
 
 var counter int
-var wg sync.WaitGroup
-var mutex sync.Mutex
+var mutex   sync.Mutex
+var wg      sync.WaitGroup
+
 
 func main() {
 	wg.Add(2)
