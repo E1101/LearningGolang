@@ -10,6 +10,7 @@ import (
 // wg is used to wait for the program to finish.
 var wg sync.WaitGroup
 
+
 func main() {
 	wg.Add(3)
 
@@ -17,10 +18,14 @@ func main() {
 	fibs := make(chan fibvalue)
 	sqrs := make(chan squarevalue)
 
+
 	// Launching 3 goroutines
 	go generateFibonacci(fibs)
+
 	go generateSquare(sqrs)
+
 	go printValues(fibs, sqrs)
+
 
 	// Wait for completing all goroutines
 	wg.Wait()
@@ -39,30 +44,33 @@ type (
 	}
 )
 
-func generateSquare(sqrs chan<- squarevalue) {
-	defer wg.Done()
-
-	for i := 1; i <= 10; i++ {
-		num := rand.Intn(50)
-		sqrs <- squarevalue{
-			input: num,
-			value: num * num,
-		}
-	}
-}
-
 func generateFibonacci(fibs chan<- fibvalue) {
 	defer wg.Done()
 
 	for i := 1; i <= 10; i++ {
 		num := float64(rand.Intn(50))
+
 		// Fibonacci using Binet's formula
 		Phi := (1 + math.Sqrt(5)) / 2
 		phi := (1 - math.Sqrt(5)) / 2
 		result := (math.Pow(Phi, num) - math.Pow(phi, num)) / math.Sqrt(5)
+
 		fibs <- fibvalue{
 			input: int(num),
 			value: int(result),
+		}
+	}
+}
+
+func generateSquare(sqrs chan<- squarevalue) {
+	defer wg.Done()
+
+	for i := 1; i <= 10; i++ {
+		num := rand.Intn(50)
+
+		sqrs <- squarevalue{
+			input: num,
+			value: num * num,
 		}
 	}
 }

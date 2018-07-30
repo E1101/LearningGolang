@@ -8,8 +8,8 @@ import (
 func main() {
 	jsonData := `
 	{
-	"name": "Todd McLeod",
-	"age": 44
+	   "name": "Todd McLeod",
+	   "age": 44
 	}
 	`
 

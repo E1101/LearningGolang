@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	// Set up the pipeline.
-	c := gen(2, 3)
+	c   := gen(2, 3)
 	out := sq(c)
 
 	// Consume the output.

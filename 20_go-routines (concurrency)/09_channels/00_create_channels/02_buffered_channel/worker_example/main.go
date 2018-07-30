@@ -35,16 +35,18 @@ func main() {
 
 	// Close the channel
 	close(taskQueue)
+
 	// Wait for all the work to get done.
 	wg.Wait()
 }
 
+
 // Task:
 
 type Task struct {
-	Id int
-	JobId int
-	Status string
+	Id        int
+	JobId     int
+	Status    string
 	CreatedOn time.Time
 }
 

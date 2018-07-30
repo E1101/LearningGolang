@@ -5,9 +5,11 @@ import (
 	"fmt"
 )
 
+
 // Employee struct with struct tags
 type Employee struct {
-	ID        int    `json:"id,omitempty"`
+	ID        int    `json:"id,omitempty"` // not being included in the JSON representation
+	                                       // if that field has a default value.
 	FirstName string `json:"firstname"`
 	LastName  string `json:"lastname"`
 	JobTitle  string `json:"job"`
@@ -21,9 +23,10 @@ func main() {
 	}
 
 	// Encoding to JSON
+	//
 	data, err := json.Marshal(emp)
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println( err.Error() )
 		return
 	}
 
@@ -31,9 +34,11 @@ func main() {
 	fmt.Println("The JSON data is:")
 	fmt.Println(jsonStr)
 
+
+	// Decoding JSON to a struct type
+	//
 	var emp1 Employee
 	b := []byte(`{"id":101,"firstname":"Irene","lastname":"Rose","job":"Developer"}`)
-	// Decoding JSON to a struct type
 	err = json.Unmarshal(b, &emp1)
 	if err != nil {
 		fmt.Println(err.Error())
