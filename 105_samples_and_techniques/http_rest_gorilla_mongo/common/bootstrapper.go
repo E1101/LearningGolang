@@ -9,7 +9,7 @@ func StartUp() {
 	initKeys()
 
 	// Initialize Logger objects with Log Level
-	setLogLevel(Level(AppConfig.LogLevel))
+	setLogLevel( Level(AppConfig.LogLevel) )
 
 	// Start a MongoDB session
 	createDBSession()

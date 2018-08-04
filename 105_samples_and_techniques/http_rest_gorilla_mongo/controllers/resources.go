@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"GolangTraining/100_samples/http_rest_gorilla_mongo/model"
+	"GolangTraining/105_samples_and_techniques/http_rest_gorilla_mongo/model"
 )
 
 //Models for JSON resources

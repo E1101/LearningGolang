@@ -8,8 +8,8 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
-	"GolangTraining/100_samples/http_rest_gorilla_mongo/common"
-	"GolangTraining/100_samples/http_rest_gorilla_mongo/store"
+	"GolangTraining/105_samples_and_techniques/http_rest_gorilla_mongo/common"
+	"GolangTraining/105_samples_and_techniques/http_rest_gorilla_mongo/store"
 )
 
 // CreateBookmark insert a new Bookmark.

@@ -3,7 +3,7 @@ package routers
 import (
 	"github.com/gorilla/mux"
 
-	"GolangTraining/100_samples/http_rest_gorilla_mongo/controllers"
+	"GolangTraining/105_samples_and_techniques/http_rest_gorilla_mongo/controllers"
 )
 
 // SetUserRoutes registers routes for user entity

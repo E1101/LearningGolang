@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"GolangTraining/100_samples/http_rest_gorilla_mongo/common"
-	"GolangTraining/100_samples/http_rest_gorilla_mongo/routers"
+	"GolangTraining/105_samples_and_techniques/http_rest_gorilla_mongo/common"
+	"GolangTraining/105_samples_and_techniques/http_rest_gorilla_mongo/routers"
 )
 
 // Entry point of the program

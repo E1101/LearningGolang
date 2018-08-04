@@ -11,13 +11,13 @@ const (
 	// UNSPECIFIED logs nothing
 	UNSPECIFIED Level = iota // 0 :
 	// TRACE logs everything
-	TRACE // 1
+	TRACE                    // 1
 	// INFO logs Info, Warnings and Errors
-	INFO // 2
+	INFO                     // 2
 	// WARNING logs Warning and Errors
-	WARNING // 3
+	WARNING                  // 3
 	// ERROR just logs Errors
-	ERROR // 4
+	ERROR                    // 4
 )
 
 // Level holds the log level.
