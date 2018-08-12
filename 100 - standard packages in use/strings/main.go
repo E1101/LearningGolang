@@ -1,13 +1,15 @@
-package strings
+package main
+
 import	(
 	"fmt"
 	"strconv"
 	"strings"
 )
-func	main(){
+
+func main() {
 	//	simple	string	demo
 	var	str	string
-	str	=	"Hello	world"
+	str	= "Hello world"
 	fmt.Println(str)
 
 	//	Concatenating
